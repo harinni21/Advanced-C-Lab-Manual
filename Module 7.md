@@ -39,7 +39,8 @@ printf("Age:%d\nName:%svaccine:%d\neligibility:yes",e.age,e.n,e.age);
 ```
 Output:
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/81340621-cc5a-4383-8c8b-c7450e0d2c7e)
+
 
 Result:
 Thus, the program is verified successfully. 
@@ -61,16 +62,32 @@ Algorithm:
  
 Program:
 
-//type your code here
-
+```
+#include<stdio.h> 
+struct numbers
+{
+int a; 
+int b;
+}n;
+int add(struct numbers n); 
+int main()
+{
+scanf("%d %d ",&n.a,&n.b);
+printf("%d",add(n));
+}
+int add(struct numbers n)
+{
+return n.a+n.b;
+}
+```
 
 
 
 Output:
 
 
-//paste your output here
 
+![image](https://github.com/user-attachments/assets/99bb5d70-59b5-4dd3-b3e0-eccdd35fe43d)
 
 
 
@@ -103,15 +120,27 @@ Use scanf to input the file name into the name array.
  
 Program:
 
-//type your code here
-
+```
+#include <stdio.h> 
+int main()
+{
+FILE *p;
+char name[30]; 
+scanf("%s",name);
+printf("%s File Created Successfully",name); 
+p=fopen("name","w");
+printf("\n%s File Opened",name); 
+fclose(p);
+printf("\n%s File Closed",name);
+}
+```
 
 
 
 Output:
 
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/0e94455e-b276-42a2-950f-c2b25d4eea02)
 
 
 
@@ -150,15 +179,34 @@ Use scanf to input the file name into the name array and the number of strings i
  
 Program:
 
-//type your code here
+```
+#include <stdio.h> 
+int main()
+{
+FILE *p;
+char name[20]; 
+int num;
+char text[50]; 
+scanf("%s%d",name,&num); 
+p=fopen("name","w"); 
+printf("%s Opened",name); 
+for(int i=0;i<num;i++)
+{
+scanf("%s",text); 
+fputs(text,p);
+}
+printf("\nData added Successfully");
 
+}
+
+```
 
 
 
 Output:
 
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/88354f99-fb24-41fa-b6d3-f704bbb709cc)
 
 
 
@@ -204,19 +252,43 @@ Algorithm:
 
 Program:
 
-//type your code here
-
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Subject
+{
+    char name[20];
+    int marks;
+};
+int main()
+{
+    int i,n;
+    scanf("%d",&n);
+    struct Subject *s = (struct Subject *)malloc(n*sizeof(struct Subject));
+    if(s==NULL)
+    {
+        printf("Memory Alocation Failed\n");
+        return 1;
+    }
+    for(i=0;i<n;i++)
+    {
+        scanf("%s %d",s[i].name,&s[i].marks);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%s  %d\n",s[i].name,s[i].marks);
+    }
+    
+   free(s);
+   return 0;
+}
+```
 
 
 
 Output:
 
-
-//paste your output here
-
-
-
-
+![image](https://github.com/user-attachments/assets/8ab3da5a-a60a-491a-b4c8-2734a10b89e3)
 
 
 Result:
